@@ -1,13 +1,11 @@
 local API = require (game. ServerScriptService:WaitforChild("IrelloAPI*))
-local BanBoardID - API:GetBoardID ("Tutorial Bans")
-local BaniistID - API:GetlistID ("Bans", BanBoardID)
+local BanBoardID - API:GetBoardID ("Test Bans")
+local BaniistID - API:GetlistID ("UserIDBans", BanBoardID)
 
 function checkurrentPlayersForBan()
-while wait (10) do
-local BanCards - API:GetCardsInlist (BanlistID)
-for
-Player in pairs (game. Players: GetChildren())
-do
+    while wait (4) do
+        local BanCards = API:GetCardsInlist(BanlistID)
+        for _,Player in pairs(game.Players:GetChildren()) do
 For
 Card in pairs (BanCards) do
 Tr string. find (Card.name, Player.UgerId)
