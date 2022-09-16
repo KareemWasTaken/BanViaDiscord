@@ -1,14 +1,14 @@
-local API = require (game.ServerScriptService:WaitforChild("IrelloAPI*))
+local API = require (game.ServerScriptService:WaitforChild("TrelloAPI))
 local BanBoardID - API:GetBoardID("InGameBan")
 local BaniistID - API:GetlistID("UserIDBanned", BanBoardID)
 
 function checkurrentPlayersForBan()
-    while wait (4) do
+    while wait(4) do
         local BanCards = API:GetCardsInlist(BanlistID)
         for _,Player in pairs(game.Players:GetChildren()) do
             for _, Card in pairs(BanCards) do
-                if string.find (Card.name, Player.UserId) then
-                    Player:Kick ("USER Banned")
+                if string.find(Card.name, Player.UserId) then
+                    Player:Kick("USER Banned")
                 end
             end
         end
@@ -22,7 +22,7 @@ game.Players.PlayerAdded:Connect(function(plr)
     local BanCards = API:GetCardsInList(BanListID)
     for _, Card in pairs(BanCards) do
         if string.find(Card.name, plr.UserId) then
-            plr:Kick ("USER Banned")
+            plr:Kick("USER Banned")
         end
     end
 end)
