@@ -1,29 +1,28 @@
 local API = require (game. ServerScriptService:WaitforChild("IrelloAPI*))
-local BanBoardID - API:GetBoardID ("Test Bans")
-local BaniistID - API:GetlistID ("UserIDBans", BanBoardID)
+local BanBoardID - API:GetBoardID ("InGameBan")
+local BaniistID - API:GetlistID ("UserIDBanned", BanBoardID)
 
 function checkurrentPlayersForBan()
     while wait (4) do
         local BanCards = API:GetCardsInlist(BanlistID)
         for _,Player in pairs(game.Players:GetChildren()) do
-For
-Card in pairs (BanCards) do
-Tr string. find (Card.name, Player.UgerId)
-then
-Plaver:Kick ("You have been banned.")
-end
-end
-end
-end
-end
-spawn (check
-ForBan)
-game. Players. PlayerAdded: Connect (function (plr)
-local BanCards = API:GetCardsInLigt (BanListID)
-for
-Card in pairs (BanCards) do
-if string. find (Card.name, pir.UserId) then
-pir:Kick ("You have been Banned.")
-end
-end
+            for _, Card in pairs(BanCards) do
+                if string.find (Card.name, Player.UserId) then
+                    Player:Kick ("USER Banned")
+                end
+            end
+        end
+     end
+end)
+
+
+spawn (checkCurrentPlayersForBan)
+
+game.Players.PlayerAdded:Connect(function(plr)
+    local BanCards = API:GetCardsInList(BanListID)
+    for _, Card in pairs(BanCards) do
+        if string.find(Card.name, plr.UserId) then
+            plr:Kick ("USER Banned")
+        end
+    end
 end)
