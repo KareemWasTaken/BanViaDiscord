@@ -35,4 +35,4 @@ async def gban(ctx, user):
     banlist.add_card(plrId)
     await ctx.send(f"<@{ctx.author.id}, Successfully Banned user ``{user}``.)
 
-  client.run(MTAyMDE5MzM5MTE3MjEyODgyOQ.Gy_deg.NyVKiDrjBzrG0y9C0BxngqaHhEpfKbNA7Rmymk")
+  client.run("")
