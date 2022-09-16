@@ -1,6 +1,6 @@
 local API = require (game.ServerScriptService:WaitforChild("IrelloAPI*))
-local BanBoardID - API:GetBoardID ("InGameBan")
-local BaniistID - API:GetlistID ("UserIDBanned", BanBoardID)
+local BanBoardID - API:GetBoardID("InGameBan")
+local BaniistID - API:GetlistID("UserIDBanned", BanBoardID)
 
 function checkurrentPlayersForBan()
     while wait (4) do
