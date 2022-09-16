@@ -7,9 +7,9 @@ import asyncio
 
 prefix = "!"
 client = commands.Bot(commands_prefix=prefix)
-tclient. TrelloClient(
-    api_key="ce630d7442dd4dd89e0fb2e564427c7d"
-    api_secret="82254d3224af4e998766928efa267f549516a35036d50b82c39677caace7e9b3"
+tclient. trelloClient(
+    api_key=""
+    api_secret=""
 )
 
 @client.command()
